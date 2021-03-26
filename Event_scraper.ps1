@@ -37,7 +37,7 @@ $logloc = C:\temp\$today
 #    keyword4:
 #        - '*VirtualAlloc*'
 #    condition: All of them
-Get-EventLog -LogName 'Windows Powershell' -After (Get-Date).Adddays(-30) | foreach{ if($_.InstanceId -eq 4104){ 
+Get-EventLog -LogName 'Windows Powershell' -After (Get-Date).Adddays(-1) | foreach{ if($_.InstanceId -eq 4104){ 
 Add-Content -Value $_.Message -Path $logloc
 $critical = 1}}
 
